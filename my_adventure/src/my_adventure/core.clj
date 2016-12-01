@@ -120,6 +120,70 @@
                   }
                   :contents []}
 
+    :kitchen    {:desc "I seemed to have walked into the kitchen. There is
+                        broken plates, bowls, and silverware littering the
+                        floor, and also different food splattered everywhere.
+                        An awful stench lingers in the room, and I cover my nose."
+                  :title "in the Kitchen"
+                  :dir {
+                  :north :servantQuarter
+                  :east  :foyer
+                  :south :innerHall
+                  }
+                  :contents []}
+
+    :dungeon    {:desc "The room is dimly lit and large shadows of dangerous
+                        torture instruments loom over the room. Fresh blood is
+                        splattered over the walls, and there is a blue, ripped
+                        apart robe lying in heap."
+                :title "in the Dungeon"
+                :dir {
+                :east  :keeproom3
+                :south :cell8
+                }
+                :contents [:ring]}
+
+    :innerHall  {:desc "I enter into the hall only to see the statues of knights
+                        knocked over, the only light source present coming from
+                        the stained large glass windows. My steps echo
+                        throughout the room as I explore further."
+                :title "in the Inner Hall"
+                :dir {
+                :north  :kitchen
+                :east   :storageRoom
+                :west  :toolRoom
+                :south :armory
+                }
+                :contents []}
+
+    :storageRoom  {:desc "I walk into the room and see row upon rows of empty
+                          shelves that had once held food. It seems rather
+                          empty inside."
+                :title "in the Storage Room"
+                :dir {
+                :west  :innerHall
+                }
+                :contents []}
+
+    :armory  {:desc "With just one glance, I notice that this must have been
+                      the armory. Broken weapons and armor lay in the rubble.
+                      Maybe there is something useful I can find here..."
+                :title "in the Armory"
+                :dir {
+                :north :innerHall
+                }
+                :contents [:shield]}
+
+    :toolRoom  {:desc "An assortment of different tools are scattered over the
+                      room as I look around. Shovels, rakes, and plenty of
+                      other things."
+              :title "in the Tool Room"
+              :dir {
+              :east :innerHall
+                }
+              :contents []}
+
+
     :grue-pen {:desc "It is very dark. You are about to be eaten by a grue."
                   :title "in the grue pen"
                   :dir {:south :courtyard}
