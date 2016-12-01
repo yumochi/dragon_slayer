@@ -4,20 +4,30 @@
   (:gen-class))
 
 (def the-map
-  { :foyer {:desc "The walls are freshly painted but I do not have any pictures.
-  You get the feeling it was just created for a game or something."
-                :title "in the foyer"
-                :dir {
-                      :south :grue-pen}
-                :contents [:raw-egg]}
+  { :entrance {:desc "In front of you stands the castle of Durham. Its walls
+                      are charred with the dragon’s flame breath, and you can still see the
+                      distinct claw marks of the beast had left behind. Somehow you feel like from
+                      this point on there is no return. It is your duty to save the kingdom!
+                      Venture forward brave adventurer."
+                  :title "at the entrance"
+                  :dir {
+                        :north :courtyard}
+                  :contents []}
+
+    :courtyard {:desc "The walls are burned and the hall still reeks of burnt flesh (smells like BBQ chicken...well rotting BBQ chicken)"
+                  :title "in the entrance"
+                  :dir {
+                        :south :entrance}
+                  :contents []}
+
     :grue-pen {:desc "It is very dark. You are about to be eaten by a grue."
-                          :title "in the grue pen"
-                          :dir {:north :foyer}
-                          :contents [:raw-egg]}})
-                        
+                  :title "in the grue pen"
+                  :dir {:south :courtyard}
+                  :contents []}})
+
 
 (def adventurer
-  { :location :foyer
+  { :location :entrance
     :inventory #{}
     :seen #{}})
 
@@ -27,7 +37,7 @@
    (when-not ((player :seen) location)
     (print (-> the-map location :desc)))
    (update-in player [:seen] #(conj % location))))
-  
+
 
 (defn to-keywords [commands]
   ;; should be a list of strings
@@ -40,7 +50,7 @@
           (do (println "You can't go that way.")
               player)
        (assoc-in player [:location] dest))))
-  
+
 
 (defn respond [player command]
   (match command
@@ -52,30 +62,30 @@
                 _ (do (println "I don't understand you.")
                       player)))
 
-                
+
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  
-  (println "It has been 1000 moons since the land of Durham has been shrouded under the 
-    wings of Bálormr Flame-Shroud The Repugnant! But the mighty dragon stalks our land 
-    again. He breathes vile, sulfurous fumes, poisoning all! His scales glow as hot as 
-    flames, and he brings death without mercy. Even the King was not safe from the dragon's 
-    wrath. Bálormr has sacked the King's keep in Deira and captured the King's young daughter. 
-    Now the kingdom teeters on the edge of death, and the people of Durham wastes away as 
+
+  (println "It has been 1000 moons since the land of Durham has been shrouded under the
+    wings of Bálormr Flame-Shroud The Repugnant! But the mighty dragon stalks our land
+    again. He breathes vile, sulfurous fumes, poisoning all! His scales glow as hot as
+    flames, and he brings death without mercy. Even the King was not safe from the dragon's
+    wrath. Bálormr has sacked the King's keep in Deira and captured the King's young daughter.
+    Now the kingdom teeters on the edge of death, and the people of Durham wastes away as
     the dragon ravages the land.")
-  
+
   (println)
-  
-  (println "Yet all hope is not lost, and a lone rider has appeared, carrying the sign of 
-    the dragon. The rider has arrived at the entrance of the King's castle in Deira, which 
-    now lay deserted. The rider slowly dismounts and enters the castle from the drawbridge. 
-    You are the rider. It is up to you to save the land of Durham and restore peace and 
+
+  (println "Yet all hope is not lost, and a lone rider has appeared, carrying the sign of
+    the dragon. The rider has arrived at the entrance of the King's castle in Deira, which
+    now lay deserted. The rider slowly dismounts and enters the castle from the drawbridge.
+    You are the rider. It is up to you to save the land of Durham and restore peace and
     harmony once again!")
-  
+
   (println)
-  
+
   (loop [local-map the-map local-player adventurer] ;; basically a way to loop
     ;;recursively
 
@@ -86,4 +96,3 @@
        (recur local-map (respond pl (to-keywords command))))))  ;; jump back to a loop thing with updated info
                                ;; may need to retool to capture additional detail
                                ;; such as tools and whatnot
-
