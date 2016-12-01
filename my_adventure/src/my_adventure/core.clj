@@ -51,10 +51,20 @@
               player)
        (assoc-in player [:location] dest))))
 
+(defn search [player])
+  ;;If there is an item in the room, print the item's description.
+  ;;Move the item into the player's inventory.
+  ;;Remove the item from the room.
+  ;;If there is no item, print "There is nothing to be found."
+
+(defn help [player])
+  ;;Print out possible commands based on the player's location.
 
 (defn respond [player command]
   (match command
                 [:look] (update-in player [:seen] #(disj % (-> player :location)))
+                [:search] (search player)
+                [:help] (help)
                 [:north] (go :north player)
                 [:south] (go :south player)
                 [:east] (go :east player)
