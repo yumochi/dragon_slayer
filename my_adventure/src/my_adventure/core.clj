@@ -17,7 +17,7 @@
                    :dir {
                          :north :foyer
                          :south :entrance}
-                   :contents []}
+                   :contents [:raw_egg {:desc "You have picked up a raw egg."}]}
 
     :foyer        {:desc "I moved past the courtyard, and finally came into the
                           foyer. I can see the damage the dragon did as he
@@ -374,6 +374,24 @@
    (when-not ((player :seen) location)
     (print (-> the-map location :desc)))
    (update-in player [:seen] #(conj % location))))
+  
+;;  (let [location (player :location)]))
+;;        item (->> the-map location :contents)]))
+;;    (if (nil? item))))
+;;      (do player))))
+;;    (print (-> item :desc))))
+;;    (update-in player [:inventory] #(conj % item))))
+    
+    
+ ;;   (when-not ((player :iventory) (-> the-map location :contents))
+;;      (print (->> the-map location :contents :desc))
+;;    (update-in player [:inventory] #(conj %))))
+   
+    
+
+     
+  
+    
 
 
 (defn to-keywords [commands]
@@ -388,20 +406,29 @@
               player)
        (assoc-in player [:location] dest))))
 
-(defn search [player])
+;;(defn search [player])
   ;;If there is an item in the room, print the item's description.
   ;;Move the item into the player's inventory.
   ;;Remove the item from the room.
   ;;If there is no item, print "There is nothing to be found."
 
-(defn help [player])
+(defn help [player]
+  (println "Available commands:")
+  (println "north: make the player go north.")
+  (println "east: make the player go east.")
+  (println "south: make the player go south.")
+  (println "west: make the player go west.")
+  (println "help: shows the help menu.")
+  (let [location (player :location)]
+    (assoc-in player [:location] location)))
+ 
   ;;Print out possible commands based on the player's location.
 
 (defn respond [player command]
   (match command
                 [:look] (update-in player [:seen] #(disj % (-> player :location)))
-                [:search] (search player)
-                [:help] (help)
+                ;;[:search] (search player)
+                [:help] (help player)
                 [:north] (go :north player)
                 [:south] (go :south player)
                 [:east] (go :east player)
