@@ -288,14 +288,14 @@
   (let [location (player :location)]
    (print (str "You are " (-> the-map location :title) ". "))
 
-(and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword))
-  (println "omg you are a sword master now!")
+(if (and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword)))
+  (do (println "omg you are a sword master now!")
   (update-in player [:inventory] #(conj % :sword)))
   ;;(when (= location :courtyard) (update player [:inventory] #(conj % :sword)) (println "omg you have a sword"))
 
-   (when-not ((player :seen) location)
+  (do (when-not ((player :seen) location)
     (print (-> the-map location :desc)))
-   (update-in player [:seen] #(conj % location))))
+   (update-in player [:seen] #(conj % location))))))
 
 
 
