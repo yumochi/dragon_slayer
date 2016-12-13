@@ -286,16 +286,22 @@
 
 (defn status [player]
   (let [location (player :location)]
-   (print (str "You are " (-> the-map location :title) ". "))
+   (print (str "You are " (-> the-map location :title) ". ")
 
-(and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword))
-  (println "omg you are a sword master now!")
-  (update-in player [:inventory] #(conj % :sword)))
-  ;;(when (= location :courtyard) (update player [:inventory] #(conj % :sword)) (println "omg you have a sword"))
-
-   (when-not ((player :seen) location)
+    (if (and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword)))
+     ((println "omg you are a sword master now!"))
+     (when-not ((player :seen) location)
+       (print (-> the-map location :desc)))
+     (update-in (update-in player [:inventory] #(conj % :sword)) player [:seen] #(conj % location)
+      
+      (when-not ((player :seen) location))))
     (print (-> the-map location :desc)))
    (update-in player [:seen] #(conj % location))))
+    
+  ;;(when (= location :courtyard) (update player [:inventory] #(conj % :sword)) (println "omg you have a sword"))
+
+ 
+   
   
 ;;  (let [location (player :location)]))
 ;;        item (->> the-map location :contents)]))
