@@ -15,7 +15,7 @@
                    :dir {
                          :north :foyer
                          :south :entrance}
-                   :contents []}
+                   :contents [:raw_egg {:desc "You have picked up a raw egg."}]}
 
     :foyer        {:desc "I moved past the courtyard, and finally came into the foyer. I can see the damage the dragon did as he forced his way into the castle. He seemed to have left behind a few of his scales by accident, and I pick one up and notice that it's harder than any armor I have ever seen. It is clear that the mighty beast’s size was too great for this dwelling of man. Bálormr must be at least twenty feet tall! I will need to find a suitable weapon to defeat the beast."
                    :title "in the Foyer"
@@ -286,6 +286,7 @@
 
 (defn status [player]
   (let [location (player :location)]
+
    (print (str "You are " (-> the-map location :title) ". "))
 
 (if (and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword)))
@@ -296,6 +297,14 @@
   (do (when-not ((player :seen) location)
     (print (-> the-map location :desc)))
    (update-in player [:seen] #(conj % location))))))
+
+
+    
+
+     
+  
+    
+
 
 
 
@@ -320,20 +329,29 @@
               player)
        (assoc-in player [:location] dest))))
 
-(defn search [player])
+;;(defn search [player])
   ;;If there is an item in the room, print the item's description.
   ;;Move the item into the player's inventory.
   ;;Remove the item from the room.
   ;;If there is no item, print "There is nothing to be found."
 
-(defn help [player])
+(defn help [player]
+  (println "Available commands:")
+  (println "north: make the player go north.")
+  (println "east: make the player go east.")
+  (println "south: make the player go south.")
+  (println "west: make the player go west.")
+  (println "help: shows the help menu.")
+  (let [location (player :location)]
+    (assoc-in player [:location] location)))
+ 
   ;;Print out possible commands based on the player's location.
 
 (defn respond [player command]
   (match command
                 [:look] (update-in player [:seen] #(disj % (-> player :location)))
-                [:search] (search player)
-                [:help] (help)
+                ;;[:search] (search player)
+                [:help] (help player)
                 [:north] (go :north player)
                 [:south] (go :south player)
                 [:east] (go :east player)
