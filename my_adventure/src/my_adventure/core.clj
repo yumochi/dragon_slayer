@@ -136,7 +136,7 @@
                 :contents []}
 
     :cell1  {:desc "Scanning over the contents of the cell, I don’t notice anything out of place. Just an empty cell."
-                :title "in Cell One."
+                :title "in Cell One"
                 :dir {
                       :south :toolRoom
                       :north :cell2}
@@ -144,7 +144,7 @@
                 :contents []}
 
     :cell2  {:desc "Looking around, this cell also seems to be empty."
-                :title "in Cell Two."
+                :title "in Cell Two"
                 :dir {
                       :south :cell1
                       :north :cell3}
@@ -152,7 +152,7 @@
                 :contents []}
 
     :cell3  {:desc "Another empty cell."
-                :title "in Cell Three."
+                :title "in Cell Three"
                 :dir {
                       :south :cell2
                       :north :cell4}
@@ -160,7 +160,7 @@
                 :contents []}
 
     :cell4  {:desc "Another empty cell."
-                :title "in Cell Four."
+                :title "in Cell Four"
                 :dir {
                       :south :cell3
                       :north :cell5}
@@ -168,7 +168,7 @@
                 :contents []}
 
     :cell5  {:desc "Another empty cell."
-                :title "in Cell Five."
+                :title "in Cell Five"
                 :dir {
                       :south :cell4
                       :north :cell6}
@@ -176,7 +176,7 @@
                 :contents []}
 
     :cell6  {:desc "Another empty cell."
-                :title "in Cell Six."
+                :title "in Cell Six"
                 :dir {
                       :south :cell5
                       :north :cell7}
@@ -184,7 +184,7 @@
                 :contents []}
 
     :cell7  {:desc "Another empty cell."
-                :title "in Cell Seven."
+                :title "in Cell Seven"
                 :dir {
                       :south :cell6
                       :north :cell8}
@@ -192,15 +192,15 @@
                 :contents []}
 
     :cell8  {:desc "Another empty cell."
-                :title "in Cell Eight."
+                :title "in Cell Eight"
                 :dir {
                       :south :cell7
                       :north :cell9}
 
                 :contents []}
 
-    :cell9  {:desc "Another empty cell.Another empty cell...oh wait. There is something different about this cell. In the back, there is heavily armored door that seems to have been busted open. I wonder what could be there."
-                :title "in Cell Nine."
+    :cell9  {:desc "Another empty cell...oh wait. There is something different about this cell. In the back, there is heavily armored door that seems to have been busted open. I wonder what could be there."
+                :title "in Cell Nine"
                 :dir {
                       :south :cell8
                       :north :dungeon}
@@ -208,7 +208,7 @@
                 :contents [:club]}
 
     :magetower  {:desc "I entered a brightly lit room. On the far side of the room, there is an impressive oak desk. The owner of the room, must have been somebody powerful. I scanned across the room, I saw all sort of strange contraption, watches, skulls, and even skin of some unrecognizable beast. There are piles of old scrolls spread across the floor. I picked up one, and saw the drawing of a magician casting spelling at a dragon, and forcing the beast to the ground. Could the king’s magician been working on something to defeat the dragon?"
-                 :title "in the Mage's Tower."
+                 :title "in the Mage's Tower"
                  :dir {
                        :west :foyer
                        :north :potionchamber}
@@ -216,7 +216,7 @@
                  :contents []}
 
     :potionchamber  {:desc "The room is dimly lit, and I am surrounded by jars and tubes on all sides, filled with things that I have never seen before: eyes of newt, a lizard’s tail, and horn of some strange animal. In the center of the room, there are flask containing liquids of many different colors, some clear and others murky.."
-                     :title "in the Potion Chamber."
+                     :title "in the Potion Chamber"
                      :dir {
                            :south :magetower
                            :west :innerKeep
@@ -225,7 +225,7 @@
                      :contents []}
 
     :magesquarter  {:desc "Another empty cell.This must be where the mage came to rest. Much of the room remained undisturbed. After seeing the damages outside, It is hard to imagine how the men lived before Bálormr attacked. I looked around, and saw a wonderfully decorated stone door, with a series of strange symbols above. I walked closer and l saw more clearly that the symbols are words, they read, “Greet me friend, and you shall be open to knowledge that you can only dream of.”"
-                    :title "in the Mage's Quarters."
+                    :title "in the Mage's Quarters"
                     :dir {
                           :south :potionchamber
                           :north :library}
@@ -233,14 +233,14 @@
                     :contents []}
 
     :library  {:desc "Haha, it is fitting for the magicians to have such strange wit. I see that I am in the library. The walls are filled with all sorts of books. They must be worth a fortune. Will there be something that I can use against the dragon?"
-                  :title "in the Library."
+                  :title "in the Library"
                   :dir {
                         :south :magesquarter}
 
                   :contents [:spellbook]}
 
     :throneroom  {:desc "I stepped out of the darkness and into a magnificent room, filled with gilded walls and chandeliers. This can only be the throne room of the King."
-                     :title "in the Throne Room."
+                     :title "in the Throne Room"
                      :dir {
                            :west :greatHall
                            :south :royalchamber}
@@ -248,7 +248,7 @@
                      :contents []}
 
     :royalchamber  {:desc "I entered the Royal Chamber of the King. I stopped briefly to admire the plush bedding. Wherever he is know, he lived a good life."
-                      :title "in the Royal Chamber."
+                      :title "in the Royal Chamber"
                       :dir {
                             :north :thronechamber
                             :south :kingsstudy}
@@ -256,7 +256,7 @@
                       :contents []}
 
     :kingsstudy  {:desc "I pushed further ahead, I arrived into the King’s study. In front of me are his book and desk made of fine ebony wood. On the wall I can see the map of Durham laid out in front of me."
-                      :title "in the King's Study."
+                      :title "in the King's Study"
                       :dir {
                             :north :royalchamber
                             :south :treasurechamber}
@@ -264,7 +264,7 @@
                       :contents []} ;;puzzle to find treasure chamber
 
     :treasurechamber  {:desc "I pushed further ahead, I arrived into the King’s study. In front of me are his book and desk made of fine ebony wood. On the wall I can see the map of Durham laid out in front of me."
-                          :title "in the Treasure Chamber."
+                          :title "in the Treasure Chamber"
                           :dir {
                                 :north :kingsstudy
                                 :east :keeproom1}
@@ -280,42 +280,82 @@
 
 
 (def adventurer
-  { :location :entrance
+  { :location :cell9
     :inventory #{}
-    :seen #{}})
+    :seen #{}
+    :done true})
 
 (defn status [player]
   (let [location (player :location)]
+    (println (str "You are " (-> the-map location :title) "."))
+    (when-not ((player :seen) location)
+      (println (-> the-map location :desc)))
+    (println "---------------------------------")
+    (update-in player [:seen] #(conj % location))))
 
-   (print (str "You are " (-> the-map location :title) ". "))
-
-(if (and (when (= location :courtyard) true) (not (contains? (player :inventory) :sword)))
-  (do (println "omg you are a sword master now!")
-  (update-in player [:inventory] #(conj % :sword)))
-  ;;(when (= location :courtyard) (update player [:inventory] #(conj % :sword)) (println "omg you have a sword"))
-
-  (do (when-not ((player :seen) location)
-    (print (-> the-map location :desc)))
-   (update-in player [:seen] #(conj % location))))))
-
-
-    
-
-     
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
+(defn search [player]
+  (let [location (player :location)]
+    (cond
+      (= location :armory)
+         (do (if (not (contains? (player :inventory) :shield))
+               (do
+                 (println "On the walls, I see some random pieces of equipment left behind by the soldiers. Most of them seem too cumbersome, so I pick up a shield that is still in good condition.")
+                 (println "---------------------------------")
+                 (-> player (assoc-in [:location] location)
+                            (update-in [:inventory] #(conj % :shield))))
+               (do
+                 (println "I have found nothing interesting.")
+                 (println "---------------------------------")
+                 player)))
+      (= location :cell9)
+         (do (if (not (contains? (player :inventory) :club))
+               (do
+                 (println "I search the back corner of the room and notice that there is actually a club, and I pick it up. Looks like I could break through something if I ever needed to.")
+                 (println "---------------------------------")
+                 (-> player (assoc-in [:location] location)
+                            (update-in [:inventory] #(conj % :club))))
+               (do
+                 (println "I have found nothing interesting.")
+                 (println "---------------------------------")
+                 player)))
+      (= location :library)
+         (do (if (not (contains? (player :inventory) :spellbook))
+               (do
+                 (println "I sift through the bookshelves, and I come across a beautifully bounded leather book. I take the book and open it to where there was a bookmark. There is spell named Dragonrend, and reading its description, the spell will force the dragon to the ground and immobilize it. I pour over it endlessly to memorize the words, and then I stuff the book with my other belongings.")
+                 (println "---------------------------------")
+                 (-> player (assoc-in [:location] location)
+                            (update-in [:inventory] #(conj % :spellbook))))
+               (do
+                 (println "I have found nothing interesting.")
+                 (println "---------------------------------")
+                 player)))
+      (= location :treasurechamber)
+         (do (if (not (contains? (player :inventory) :sword))
+               (do
+                 (println "I grab the sword and whirl it around. This will surely bring the dragon's demise.")
+                 (println "---------------------------------")
+                 (-> player (assoc-in [:location] location)
+                            (update-in [:inventory] #(conj % :sword))))
+               (do
+                 (println "I have found nothing interesting.")
+                 (println "---------------------------------")
+                 player)))
+      (= location :dungeon)
+         (do (if (not (contains? (player :inventory) :ring))
+               (do
+                 (println "I search through the robs and come across a magic ring! I am not sure what it does, but it might come in handy so I take it anyways.")
+                 (println "---------------------------------")
+                 (-> player (assoc-in [:location] location)
+                            (update-in [:inventory] #(conj % :ring))))
+               (do
+                 (println "I have found nothing interesting.")
+                 (println "---------------------------------")
+                 player)))
+      :else
+         (do
+            (println "I have found nothing interesting.")
+            (println "---------------------------------")
+            player))))
 
 (defn to-keywords [commands]
   ;; should be a list of strings
@@ -326,6 +366,7 @@
         dest (->> the-map location :dir dir)]
       (if (nil? dest)
           (do (println "You can't go that way.")
+              (println "---------------------------------")
               player)
        (assoc-in player [:location] dest))))
 
@@ -341,22 +382,26 @@
   (println "east: make the player go east.")
   (println "south: make the player go south.")
   (println "west: make the player go west.")
+  (println "search: searches the current location.")
   (println "help: shows the help menu.")
+  (println "---------------------------------")
   (let [location (player :location)]
     (assoc-in player [:location] location)))
- 
+
   ;;Print out possible commands based on the player's location.
 
 (defn respond [player command]
+  (println "---------------------------------")
   (match command
                 [:look] (update-in player [:seen] #(disj % (-> player :location)))
-                ;;[:search] (search player)
+                [:search] (search player)
                 [:help] (help player)
                 [:north] (go :north player)
                 [:south] (go :south player)
                 [:east] (go :east player)
                 [:west] (go :west player)
                 _ (do (println "I don't understand you.")
+                      (println "---------------------------------")
                       player)))
 
 
@@ -367,19 +412,21 @@
 
   (println "It has been 1000 moons since the land of Durham has been shrouded under the wings of Bálormr Flame-Shroud The Repugnant! But the mighty dragon stalks our land again. He breathes vile, sulfurous fumes, poisoning all! His scales glow as hot as flames, and he brings death without mercy. Even the King was not safe from the dragon's wrath. Bálormr has sacked the King's keep in Deira and captured the King's young daughter. Now the kingdom teeters on the edge of death, and the people of Durham wastes away as the dragon ravages the land.")
 
-  (println)
+  (println "---------------------------------")
 
   (println "Yet all hope is not lost, and a lone rider has appeared, carrying the sign of the dragon. The rider has arrived at the entrance of the King's castle in Deira, which now lay deserted. The rider slowly dismounts and enters the castle from the drawbridge. You are the rider. It is up to you to save the land of Durham and restore peace and harmony once again!")
 
-  (println)
+  (println "---------------------------------")
 
   (loop [local-map the-map local-player adventurer] ;; basically a way to loop
     ;;recursively
 
       (let [pl (status local-player)
-            _  (println " What do you want to do?")
+            _  (println "What do you want to do?")
+            _  (println "---------------------------------")
             command (read-line)]
-
-       (recur local-map (respond pl (to-keywords command))))))  ;; jump back to a loop thing with updated info
+       (if (= local-player :done true)
+          (println "Goodbye!")
+          (recur local-map (respond pl (to-keywords command)))))))  ;; jump back to a loop thing with updated info
                                ;; may need to retool to capture additional detail
                                ;; such as tools and whatnot
