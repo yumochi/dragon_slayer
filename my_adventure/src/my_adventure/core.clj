@@ -4,13 +4,13 @@
   (:gen-class))
 
 (def the-map
-  { :entrance     {:desc "In front of you stands the castle of Durham. Its walls are charred with the dragon’s flame breath, and you can still see the distinct claw marks of the beast had left behind. Somehow you feel like from this point on there is no return. It is your duty to save the kingdom! Venture forward brave adventurer."
+  { :entrance     {:desc "In front of you stands the castle of Durham. Its walls are charred with the dragon’s flame breath, and you can still see the distinct claw marks that the beast had left behind. Somehow you feel like from this point on there is no return. It is your duty to save the kingdom! Venture forward brave adventurer."
                    :title "at the Entrance"
                    :dir {
                          :north :courtyard}
                    :contents []}
 
-    :courtyard    {:desc "You’ve crossed drawbridge into the courtyard. The once lush grass is not blackened into soot, and down the path stands the massive door to the ransacked castle."
+    :courtyard    {:desc "You’ve crossed the drawbridge into the courtyard. The once lush grass is now blackened into soot, and down the path stands the massive door to the ransacked castle."
                    :title "in the Courtyard"
                    :dir {
                          :north :foyer
@@ -20,20 +20,19 @@
     :foyer        {:desc "I moved past the courtyard, and finally came into the foyer. I can see the damage the dragon did as he forced his way into the castle. He seemed to have left behind a few of his scales by accident, and I pick one up and notice that it's harder than any armor I have ever seen. It is clear that the mighty beast’s size was too great for this dwelling of man. Bálormr must be at least twenty feet tall! I will need to find a suitable weapon to defeat the beast."
                    :title "in the Foyer"
                    :dir {
-                         :west  :servantquarter
+                         :west  :kitchen
                          :east  :magetower
                          :north :greathall
                          :south :courtyard}
                    :contents []}
 
-    :greathall    {:desc "As I finally I stepped into the famed Hall of the Durham Castle, my mind drift back to my childhood briefly, to the tales I heard of this place. Yet, instead of a chamber lit by a thousand candles, I only found the destruction left in Bálormr’s wake. Instead of a bountiful feast fit for one of the most powerful King in the realm, I can only hear the hiss of the wind blowing through hole Bálormr tore through the ceiling. Ahead of me, I can see the king’s throne, further up,  I see the entrance to the inner keep."
+    :greathall    {:desc "As I finally stepped into the famed Hall of Durham Castle, my mind drifts back to my childhood briefly, to the tales I had heard of this place. Yet, instead of a chamber lit by a thousand candles, I only found the destruction left in Bálormr’s wake. Instead of a bountiful feast fit for one of the most powerful King in the realm, I can only hear the hiss of the wind blowing through the hole Bálormr tore through the ceiling. I see the entrance to the Inner Keep on the balcony. There should be a way up there."
                    :title "in the Great Hall"
                    :dir {
-                         :south :foyer
-                         :east :throneroom}
+                         :south :foyer}
                    :contents []}
 
-    :innerkeep    {:desc "The the room looks like it has been scorched and torn apart. The dragon must have been through here! I must be getting closer. Better keep an eye out."
+    :innerkeep    {:desc "The room looks like it has been scorched and torn apart. The dragon must have been through here! I must be getting closer. Better keep an eye out."
                     :title "in the Inner Keep"
                     :dir {
                           :north :keephallway
@@ -48,18 +47,18 @@
 
                     :contents []}
 
-    :keeproom1   {:desc "As I step inside, I smell the burning of wood. There are glowing embers along the walls; the dragon can’t be much further now"
+    :keeproom1   {:desc "As I step inside, I smell the burning of wood. There are glowing embers along the walls; the dragon can’t be much further now."
                   :title "in the First Keep Room"
                   :dir {
                         :north :keeproom2
                         :south :keephallway}
                   :contents []}
 
-    :keeproom2   {:desc "I start feeling the heat now, sweat beading down my face. I start to grow anxious as I continue forward, unsure of what lies ahead"
+    :keeproom2   {:desc "I start feeling the heat now, sweat beading down my face. I start to grow anxious as I continue forward, unsure of what lies ahead."
                   :title "in the Second Keep Room"
                   :dir {
                         :north :keeproom3
-                        :south :keeproom2}
+                        :south :keeproom1}
                   :contents []}
 
     :keeproom3   {:desc "The heat in this room is sweltering, the flickering of flames eating away at the walls and floorboards. I carefully venture forward, but then suddenly, the floor behind me falls out! There is no way back now, only forward. I gulp and prepare myself for the worst, the dragon is now ahead."
@@ -95,7 +94,7 @@
     :dungeon    {:desc "The room is dimly lit and large shadows of dangerous torture instruments loom over the room. Fresh blood is splattered over the walls, and there is a blue, ripped apart robe lying in heap."
                  :title "in the Dungeon"
                  :dir {
-                       :east  :keeproom3 ;;keep hidden somehow
+                       :east  :cell1
                        :south :cell9}
 
                  :contents [:ring]}
@@ -110,7 +109,7 @@
 
                  :contents []}
 
-    :storageroom  {:desc "I walk into the room and see row upon rows of empty shelves that had once held food. It seems rather empty inside."
+    :storageroom  {:desc "I walk into the room and see rows upon rows of empty shelves that had once held food. It seems rather empty inside."
                    :title "in the Storage Room"
                    :dir {
                          :west  :innerhall}
@@ -162,7 +161,7 @@
                       :south :cell3
                       :north :cell5}
 
-                :contents []}
+                :contents [:club]}
 
     :cell5  {:desc "Another empty cell."
                 :title "in Cell Five"
@@ -202,9 +201,9 @@
                       :south :cell8
                       :north :dungeon}
 
-                :contents [:club]}
+                :contents []}
 
-    :magetower  {:desc "I entered a brightly lit room. On the far side of the room, there is an impressive oak desk. The owner of the room, must have been somebody powerful. I scanned across the room, I saw all sort of strange contraption, watches, skulls, and even skin of some unrecognizable beast. There are piles of old scrolls spread across the floor. I picked up one, and saw the drawing of a magician casting spelling at a dragon, and forcing the beast to the ground. Could the king’s magician been working on something to defeat the dragon?"
+    :magetower  {:desc "I entered a brightly lit room. On the far side of the room, there is an impressive oak desk. The owner of the room, must have been somebody powerful. I scanned across the room, and I saw all sorts of strange contraptions, watches, skulls, and even skin of some unrecognizable beast. There are piles of old scrolls spread across the floor. I picked up one, and saw the drawing of a magician casting spell at a dragon, and forcing the beast to the ground. Could the king’s magician been working on something to defeat the dragon?"
                  :title "in the Mage's Tower"
                  :dir {
                        :west :foyer
@@ -212,7 +211,7 @@
 
                  :contents []}
 
-    :potionchamber  {:desc "The room is dimly lit, and I am surrounded by jars and tubes on all sides, filled with things that I have never seen before: eyes of newt, a lizard’s tail, and horn of some strange animal. In the center of the room, there are flask containing liquids of many different colors, some clear and others murky.."
+    :potionchamber  {:desc "The room is dimly lit, and I am surrounded by jars and tubes on all sides, filled with things that I have never seen before: eyes of newt, a lizard’s tail, and horn of some strange animal. In the center of the room, there are flasks containing liquids of many different colors, some clear and others murky.."
                      :title "in the Potion Chamber"
                      :dir {
                            :south :magetower
@@ -221,7 +220,7 @@
 
                      :contents []}
 
-    :magesquarter  {:desc "This must be where the mage came to rest. Much of the room remained undisturbed. After seeing the damages outside, It is hard to imagine how the men lived before Bálormr attacked. I looked around, and saw a wonderfully decorated stone door, with a series of strange symbols above. I walked closer and l saw more clearly that the symbols are words, they read, “Greet me friend, and you shall be open to knowledge that you can only dream of.”"
+    :magesquarter  {:desc "This must be where the mage came to rest. Much of the room remained undisturbed. After seeing the damages outside, it is hard to imagine how the men lived before Bálormr attacked.”"
                     :title "in the Mage's Quarters"
                     :dir {
                           :south :potionchamber
@@ -244,33 +243,32 @@
 
                      :contents []}
 
-    :royalchamber  {:desc "I entered the Royal Chamber of the King. I stopped briefly to admire the plush bedding. Wherever he is know, he lived a good life."
+    :royalchamber  {:desc "I entered the Royal Chamber of the King. I stopped briefly to admire the plush bedding. Wherever he is now, he lived a good life."
                       :title "in the Royal Chamber"
                       :dir {
-                            :north :thronechamber
+                            :north :throneroom
                             :south :kingsstudy}
 
                       :contents []}
 
-    :kingsstudy  {:desc "I pushed further ahead, I arrived into the King’s study. In front of me are his book and desk made of fine ebony wood. On the wall I can see the map of Durham laid out in front of me."
+    :kingsstudy  {:desc "I pushed further ahead, and I arrived into the King’s study. In front of me are his books and his desk made of fine ebony wood. On the wall I can see the map of Durham laid out in front of me, but oddly there seems to be air flowing from behind the map. I wonder if there is something behind it."
                       :title "in the King's Study"
                       :dir {
-                            :north :royalchamber
-                            :south :treasurechamber}
+                            :north :royalchamber}
 
-                      :contents []} ;;puzzle to find treasure chamber
+                      :contents []}
 
-    :treasurechamber  {:desc "I descended into the treasury, and I saw mountains of treasures, and in the midst of it all, is gleaming sword. I became transfixed for a moment."
+    :treasurechamber  {:desc "I descended into the chamber, and I saw mountains of treasures. In the midst of it all is a gleaming sword, and I become transfixed for a moment."
                           :title "in the Treasure Chamber"
                           :dir {
                                 :north :kingsstudy
-                                :east :keeproom1}
+                                :east :keephallway}
 
                           :contents [:sword]}})
 
 (def adventurer
-  { :location :keephallway
-    :inventory #{:club}
+  { :location :entrance
+    :inventory #{}
     :seen #{}
     :events #{}})
 
@@ -296,10 +294,10 @@
                  (println "I have found nothing interesting.")
                  (println "---------------------------------")
                  player)))
-      (= location :cell9)
+      (= location :cell4)
          (do (if (not (contains? (player :inventory) :club))
                (do
-                 (println "I search the back corner of the room and notice that there is actually a club, and I pick it up. Looks like I could break through something if I ever needed to.")
+                 (println "I search the back corner of the cell and notice that there is actually a club, and I pick it up. Looks like I could break through something if I ever needed to.")
                  (println "---------------------------------")
                  (-> player (assoc-in [:location] location)
                             (update-in [:inventory] #(conj % :club))))
@@ -332,7 +330,7 @@
       (= location :dungeon)
          (do (if (not (contains? (player :inventory) :ring))
                (do
-                 (println "I search through the robs and come across a magic ring! I am not sure what it does, but it might come in handy so I take it anyways.")
+                 (println "I search through the robes and come across a magic ring! I am not sure what it does, but it might come in handy so I take it anyways.")
                  (println "---------------------------------")
                  (-> player (assoc-in [:location] location)
                             (update-in [:inventory] #(conj % :ring))))
@@ -373,7 +371,7 @@
       (cond
          (= location :keephallway)
             (do
-               (if (and (contains? (player :inventory) :club) (not (contains? (player :events) :smash)))
+               (if (and (or (contains? (player :inventory) :club) (contains? (player :inventory) :sword)) (not (contains? (player :events) :smash)))
                   (do
                      (println "I smash down the door! Now I can venture further.")
                      (println "---------------------------------")
@@ -386,8 +384,23 @@
                         (println "---------------------------------")
                         (assoc-in player [:location] location))))))
          (= location :greathall)
-            (do
-               (println "Type password.")) ;Need to work on this
+            (if (not (contains? (player :events) :secretdoor))
+               (do
+                  (println "I looked around and see a wonderfully decorated stone door with a series of strange symbols above it. I walk closer and I see more clearly that the symbols are words, and they read, “Greet me friend, and you shall be open to riches that you can only dream of.”")
+                  (println "---------------------------------")
+                  (println "Use the password command to enter what you wish to say.")
+                  (println "---------------------------------")
+                  (assoc-in player [:location] location))
+               (do
+                  (assoc-in player [:location] :throneroom)))
+         (= location :kingsstudy)
+            (if (not (contains? (player :events) :treasure))
+               (do
+                  (println "I stand in front of the map and then drive my fist right through it, and then I tear it down. I then can see a glimmer of light shining through from the hole I made.")
+                  (println "---------------------------------")
+                  (-> player (assoc-in [:location] :treasurechamber)
+                             (update-in [:events] #(conj % :treasure))))
+               (assoc-in player [:location] :treasurechamber))
          :else
             (if (empty? (player :inventory))
                (do
@@ -399,6 +412,33 @@
                   (println "---------------------------------")
                   (assoc-in player [:location] location))))))
 
+(defn password [player]
+   (let [location (player :location)]
+      (if (and (= location :greathall))
+         (do
+            (if (not (contains? (player :events) :secretdoor))
+               (do
+                  (println "Enter the password.")
+                  (println "---------------------------------")
+                  (let [pass1 (read-line)]
+                     (if (or (= pass1 "hello") (= pass1 "Hello"))
+                        (do
+                           (println "---------------------------------")
+                           (println "A light shimmers over the doorway as the entire wall starts to move apart, revealing the passage inside!")
+                           (println "---------------------------------")
+                           (-> player (assoc-in [:location] :throneroom)
+                                      (update-in [:events] #(conj % :secretdoor))))
+                        (do
+                           (println "---------------------------------")
+                           (println "Nothing happens. Maybe I can try something else.")
+                           (println "---------------------------------")
+                           (assoc-in player [:location] location)))))
+            (assoc-in player [:location] :throneroom)))
+         (do
+            (println "Can't enter password here.")
+            (println "---------------------------------")
+            (assoc-in player [:location] location)))))
+
 (defn help [player]
   (println "Available commands:")
   (println "north: make the player go north.")
@@ -408,6 +448,8 @@
   (println "search: searches the current location.")
   (println "inventory: shows the current items in the player's inventory.")
   (println "interact: interacts with the current location.")
+  (println "password: enters a password.")
+  (println "look: repeats the current location's description.")
   (println "quit: quits the game.")
   (println "help: shows the help menu.")
   (println "---------------------------------")
@@ -423,6 +465,7 @@
                 [:inventory] (inventory player)
                 [:quit] (quit)
                 [:interact] (interact player)
+                [:password] (password player)
                 [:north] (go :north player)
                 [:south] (go :south player)
                 [:east] (go :east player)
@@ -435,7 +478,9 @@
    [& args]
    (println "It has been 1000 moons since the land of Durham has been shrouded under the wings of Bálormr Flame-Shroud The Repugnant! But the mighty dragon stalks our land again. He breathes vile, sulfurous fumes, poisoning all! His scales glow as hot as flames, and he brings death without mercy. Even the King was not safe from the dragon's wrath. Bálormr has sacked the King's keep in Deira and captured the King's young daughter. Now the kingdom teeters on the edge of death, and the people of Durham wastes away as the dragon ravages the land.")
    (println "---------------------------------")
-   (println "Yet all hope is not lost, and a lone rider has appeared, carrying the sign of the dragon. The rider has arrived at the entrance of the King's castle in Deira, which now lay deserted. The rider slowly dismounts and enters the castle from the drawbridge. You are the rider. It is up to you to save the land of Durham and restore peace and harmony once again!")
+   (println "Yet all hope is not lost, and a lone rider has appeared, carrying the sign of the dragon. The rider has arrived at the entrance of the King's castle in Deira, which now lays deserted. The rider slowly dismounts and enters the castle from the drawbridge. You are the rider. It is up to you to save the land of Durham and restore peace and harmony once again!")
+   (println "---------------------------------")
+   (println "Use the command 'help' to list the available commands.")
    (println "---------------------------------")
    (loop [local-map the-map local-player adventurer]
       (let [location (local-player :location)]
@@ -464,7 +509,7 @@
                      (System/exit 0)))
                (if (contains? (local-player :inventory) :spellbook)
                   (do
-                     (println "Using the knowledge of magic I had gained, I cast a spell on the dragon! The dragon makes a loud roar and falls over, glaring at me, his power weakened. My spell seemed to have immobilized the beast! However, the dragon, hissing and growling comes towards me. Without any way to pierce the dragon’s armor, he swipes at me, grabbing me in his claw. He brings me up to his face, looking at me with angry eyes, and then tears me about with his teeth, swallowing me whole!")
+                     (println "Using the knowledge of magic I had gained, I cast a spell on the dragon! The dragon makes a loud roar and falls over, glaring at me, his power weakened. My spell seemed to have immobilized the beast! However, the dragon, hissing and growling comes towards me. Without any way to pierce the dragon’s armor, he swipes at me, grabbing me in his claw. He brings me up to his face, looking at me with angry eyes, and then tears me apart with his teeth, swallowing me whole!")
                      (println "---------------------------------")
                      (println "GAME OVER")
                      (System/exit 0)))
