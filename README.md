@@ -6,3 +6,5 @@ It has been 1000 moons since the land of Durham has been shrouded under the wing
 Yet all hope is not lost, and a lone rider has appeared, carrying the sign of the dragon. The rider has arrived at the entrance of the King's castle in Deira, which now lays deserted. The rider slowly dismounts and enters the castle from the drawbridge. You are the rider. It is up to you to save the land of Durham and restore peace and harmony once again!
 
 Start the game by running lein repl (-main)
+
+![alt tag](https://raw.githubusercontent.com/yumochi/dragon_slayer/master/my_adventure/dragon_slayer_build.png)
